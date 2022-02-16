@@ -1,0 +1,179 @@
+{
+	"id": 0,
+	"name": "ahv13-validator",
+	"kind": 1,
+	"kindString": "Project",
+	"flags": {},
+	"originalName": "",
+	"children": [
+		{
+			"id": 1,
+			"name": "AHV13",
+			"kind": 128,
+			"kindString": "Class",
+			"flags": {},
+			"comment": {
+				"shortText": "Provides a set of methods to compute swiss social security numbers' checksums\nand check their validity."
+			},
+			"children": [
+				{
+					"id": 2,
+					"name": "constructor",
+					"kind": 512,
+					"kindString": "Constructor",
+					"flags": {},
+					"signatures": [
+						{
+							"id": 3,
+							"name": "new AHV13",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"id": 1,
+								"name": "AHV13"
+							}
+						}
+					]
+				},
+				{
+					"id": 10,
+					"name": "checkSum",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "lib/ahv13.ts",
+							"line": 57,
+							"character": 2
+						}
+					],
+					"signatures": [
+						{
+							"id": 11,
+							"name": "checkSum",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Parse the social security number and return its checksum",
+								"text": "# Example\n\n```ts\nconst validator = new AHV13();\nconst checksum = validator.checkSum('756.9217.0769.8');\n\nconsole.log(checksum); // 5\n```\n",
+								"returns": "The social security number's checksum\n"
+							},
+							"parameters": [
+								{
+									"id": 12,
+									"name": "ahvNumber12",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"shortText": "Social security number **without its checksum**"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						}
+					]
+				},
+				{
+					"id": 13,
+					"name": "isValid",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "lib/ahv13.ts",
+							"line": 77,
+							"character": 2
+						}
+					],
+					"signatures": [
+						{
+							"id": 14,
+							"name": "isValid",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"shortText": "Validate a AHV13 Number with or without dots in the form of '756.9217.0769.85'",
+								"text": "# Example\n\n```ts\nconst validator = new AHV13();\n\nconsole.log(validator.isValid(\"756.9217.0769.85\")) // true\nconsole.log(validator.isValid(\"756.9217.0769.82\")) // false\n```\n",
+								"returns": "`true` if the number is valid. `false` otherwise.\n"
+							},
+							"parameters": [
+								{
+									"id": 15,
+									"name": "ahv13",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"shortText": "Social security number **with its checksum**"
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Constructors",
+					"kind": 512,
+					"children": [
+						2
+					]
+				},
+				{
+					"title": "Methods",
+					"kind": 2048,
+					"children": [
+						10,
+						13
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "lib/ahv13.ts",
+					"line": 5,
+					"character": 13
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "Classes",
+			"kind": 128,
+			"children": [
+				1
+			]
+		}
+	],
+	"sources": [
+		{
+			"fileName": "index.ts",
+			"line": 1,
+			"character": 0
+		}
+	]
+}

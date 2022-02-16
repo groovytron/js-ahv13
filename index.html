@@ -1,0 +1,75 @@
+<!DOCTYPE html><html class="default"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>ahv13-validator</title><meta name="description" content="Documentation for ahv13-validator"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script async src="assets/search.js" id="search-script"></script></head><body><script>document.body.classList.add(localStorage.getItem("tsd-theme") || "os")</script><header><div class="tsd-page-toolbar"><div class="container"><div class="table-wrap"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget search no-caption">Search</label><input type="text" id="tsd-search-field"/></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">ahv13-validator</a></div><div class="table-cell" id="tsd-widgets"><div id="tsd-filter"><a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a><div class="tsd-filter-group"><div class="tsd-select" id="tsd-filter-visibility"><span class="tsd-select-label">All</span><ul class="tsd-select-list"><li data-value="public">Public</li><li data-value="protected">Public/Protected</li><li data-value="private" class="selected">All</li></ul></div> <input type="checkbox" id="tsd-filter-inherited" checked/><label class="tsd-widget" for="tsd-filter-inherited">Inherited</label><input type="checkbox" id="tsd-filter-externals" checked/><label class="tsd-widget" for="tsd-filter-externals">Externals</label></div></div><a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a></div></div></div></div><div class="tsd-page-title"><div class="container"><h1>ahv13-validator</h1></div></div></header><div class="container container-main"><div class="row"><div class="col-8 col-content"><div class="tsd-panel tsd-typography">
+<a href="#js-ahv13" id="js-ahv13" style="color: inherit; text-decoration: none;">
+  <h1>js-ahv13</h1>
+</a>
+
+<a href="#about" id="about" style="color: inherit; text-decoration: none;">
+  <h2>About</h2>
+</a>
+<p>Helps you to check ahv13 numbers (swiss social security numbers) for
+their validity.
+See also <a href="http://www.sozialversicherungsnummer.ch/aufbau-neu.htm">this article (in german)</a>
+for more information about the form.</p>
+
+<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
+  <h2>Installation</h2>
+</a>
+<p>To install using <code>npm</code>:</p>
+<pre><code><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-0">install</span><span class="hl-1"> --</span><span class="hl-0">save</span><span class="hl-1"> </span><span class="hl-0">ahv13</span><span class="hl-1">-</span><span class="hl-0">validator</span>
+</code></pre>
+<p>If you are using <code>yarn</code>:</p>
+<pre><code><span class="hl-0">yarn</span><span class="hl-1"> </span><span class="hl-0">add</span><span class="hl-1"> </span><span class="hl-0">ahv13</span><span class="hl-1">-</span><span class="hl-0">validator</span>
+</code></pre>
+
+<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+  <h2>Usage</h2>
+</a>
+<p>The SSN can be passed with or without dots.</p>
+<pre><code class="language-ts"><span class="hl-2">import</span><span class="hl-1"> { </span><span class="hl-0">AHV13</span><span class="hl-1"> } </span><span class="hl-2">from</span><span class="hl-1"> </span><span class="hl-3">&#39;ahv13-validator&#39;</span><span class="hl-1">;</span><br/><br/><span class="hl-4">const</span><span class="hl-1"> </span><span class="hl-5">ahv13validator</span><span class="hl-1"> = </span><span class="hl-4">new</span><span class="hl-1"> </span><span class="hl-6">AHV13</span><span class="hl-1">();</span><br/><span class="hl-4">const</span><span class="hl-1"> </span><span class="hl-5">isValid</span><span class="hl-1"> = </span><span class="hl-0">ahv13validator</span><span class="hl-1">.</span><span class="hl-6">isValid</span><span class="hl-1">(</span><span class="hl-3">&#39;756.9217.0769.85&#39;</span><span class="hl-1">);</span><br/><br/><span class="hl-0">console</span><span class="hl-1">.</span><span class="hl-6">log</span><span class="hl-1">(</span><span class="hl-3">&#39;valid&#39;</span><span class="hl-1">, </span><span class="hl-0">isValid</span><span class="hl-1">)</span><br/><br/><span class="hl-0">console</span><span class="hl-1">.</span><span class="hl-6">log</span><span class="hl-1">(</span><span class="hl-3">&#39;5==&#39;</span><span class="hl-1">,</span><span class="hl-0">ahv13</span><span class="hl-1">.</span><span class="hl-6">checkSum</span><span class="hl-1">(</span><span class="hl-3">&#39;756.9217.0769.8&#39;</span><span class="hl-1">));</span><br/><span class="hl-0">console</span><span class="hl-1">.</span><span class="hl-6">log</span><span class="hl-1">(</span><span class="hl-3">&#39;true==&#39;</span><span class="hl-1">,</span><span class="hl-0">ahv13</span><span class="hl-1">.</span><span class="hl-6">isValid</span><span class="hl-1">(</span><span class="hl-3">&#39;756.9217.0769.85&#39;</span><span class="hl-1">));</span>
+</code></pre>
+
+<a href="#contributing" id="contributing" style="color: inherit; text-decoration: none;">
+  <h2>Contributing</h2>
+</a>
+<p>If you want to improve one of these images, your will need the following software installed on your system:</p>
+<ul>
+<li><code>node</code> (10 or higher) with <code>npm</code></li>
+</ul>
+<p>You can then install the dependencies by running <code>npm install</code>.</p>
+
+<a href="#test-the-code" id="test-the-code" style="color: inherit; text-decoration: none;">
+  <h3>Test the code</h3>
+</a>
+<p>Code can be tested using <a href="https://jestjs.io/">Jest</a> by running <code>npm run test</code>.</p>
+<p>You can use <code>npm run watch:test</code> to watch for files and run the test on every change.</p>
+
+<a href="#build" id="build" style="color: inherit; text-decoration: none;">
+  <h3>Build</h3>
+</a>
+<p>Project can be transpiled from <a href="https://www.typescriptlang.org/">TypeScript</a> to JavaScript by running <code>npm run build</code>.</p>
+<p>You can use <code>npm run watch:build</code> to watch for files and build on every change.</p>
+
+<a href="#build-the-documentation" id="build-the-documentation" style="color: inherit; text-decoration: none;">
+  <h3>Build the documentation</h3>
+</a>
+<p>Documentation can be build with <a href="https://typedoc.org/"><code>TypeDoc</code></a> by running
+<code>npm run doc</code>.</p>
+<p>You can use <code>npm run watch:doc</code> to watch for files and build the documentation on every change.</p>
+<p><em>Note: This mode will only detect changes to files watched by the
+TypeScript compiler.
+Changes to other files (<code>README.md</code>) will not cause a rebuild.</em></p>
+
+<a href="#testing-github-actions-locally" id="testing-github-actions-locally" style="color: inherit; text-decoration: none;">
+  <h3>Testing GitHub Actions locally</h3>
+</a>
+<p>GitHub Actions pipeline can be run locally using <a href="https://github.com/nektos/act"><code>act</code></a>.</p>
+<p>Once installed just run <code>act</code> to run the pipeline locally.</p>
+
+<a href="#external-links" id="external-links" style="color: inherit; text-decoration: none;">
+  <h2>External links</h2>
+</a>
+<p>Here are a few etra links documenting how swiss social security number are checked:</p>
+<ul>
+<li><a href="https://www.bsv.admin.ch/bsv/de/home/sozialversicherungen/ahv/grundlagen-gesetze/ahv-nummer.html">The AHV Number (in german, french or italian)</a></li>
+</ul>
+</div></div><div class="col-4 col-menu menu-sticky-wrap menu-highlight"><nav class="tsd-navigation primary"><ul><li class="current"><a href="modules.html">Exports</a></li></ul></nav><nav class="tsd-navigation secondary menu-sticky"><ul><li class="tsd-kind-class"><a href="classes/AHV13.html" class="tsd-kind-icon">AHV13</a></li></ul></nav></div></div></div><footer class="with-border-bottom"><div class="container"><h2>Legend</h2><div class="tsd-legend-group"><ul class="tsd-legend"><li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li><li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li></ul></div><h2>Settings</h2><p>Theme <select id="theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></p></div></footer><div class="container tsd-generator"><p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div><div class="overlay"></div><script src="assets/main.js"></script></body></html>
